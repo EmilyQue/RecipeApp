@@ -13,18 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('test');
-});
-
+/*Route is mapped to the '/home' URI and will return the Home view */
 Route::get('/home', function () {
-    return view('homePage');
+    return view('home');
 });
 
+/*Route is mapped to the '/login' URI and will return the Login view */
 Route::get('/login', function () {
-    return view('loginPage');
+    return view('login');
+ });
+
+// /*Fetches the post parameters of login*/
+Route::post('/login', 'LoginController@index');
+
+/*Route is mapped to the '/register' URI and will return the Register view */
+Route::get('/register', function() {
+    return view('register');
 });
 
-Route::get('/register', function () {
-    return view('registerPage');
-});
+/*Fetches the post parameters of registration*/
+Route::post('/register', 'App\Http\Controllers\RegistrationController@index');

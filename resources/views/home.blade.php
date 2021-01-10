@@ -19,7 +19,7 @@
                         <p><small>By: Emily Quevedo</small></p>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
                             voluptas totam</p>
-                            <a href="#" class="btn-card">Go to recipe</a>
+                            <a href="#" class="btn-card">See Recipe</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                         <p><small>By: Emily Quevedo</small></p>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
                             voluptas totam</p>
-                            <a href="#" class="btn-card">Go to recipe</a>
+                            <a href="#" class="btn-card">See Recipe</a>
                     </div>
                 </div>
             </div>
@@ -47,12 +47,10 @@
                         <p><small>By: Emily Quevedo</small></p>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
                             voluptas totam</p>
-                            <a href="#" class="btn-card">Go to recipe</a>
+                            <a href="#" class="btn-card">See Recipe</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 @endsection
