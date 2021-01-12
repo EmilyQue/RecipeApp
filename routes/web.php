@@ -18,18 +18,11 @@ Route::get('/home', function () {
     return view('home');
 });
 
-/*Route is mapped to the '/login' URI and will return the Login view */
-Route::get('/login', function () {
-    return view('login');
- });
 
-// /*Fetches the post parameters of login*/
-Route::post('/login', 'LoginController@index');
-
-/*Route is mapped to the '/register' URI and will return the Register view */
-Route::get('/register', function() {
-    return view('register');
+/*Route is mapped to the '/addRecipe' URI and will return the Recipe view */
+Route::get('/addRecipe', function() {
+    return view('addRecipe');
 });
 
 /*Fetches the post parameters of registration*/
-Route::post('/register', 'App\Http\Controllers\RegistrationController@index');
+Route::post('/addRecipe', 'App\Http\Controllers\RecipeController@index');

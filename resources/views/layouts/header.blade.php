@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a href="#" class="navbar-brand"><b>Look</b>To<b>Cook</b></a>
+    <a href="#" class="navbar-brand">Emily's<b>Cook</b>Book</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,14 +8,7 @@
         <div class="navbar-nav">
             <a href="/home" class="nav-item nav-link">Home</a>
             <a href="/addRecipe" class="nav-item nav-link">Add A Recipe</a>
-            <a href="/about" class="nav-item nav-link">About</a>
-        </div>
-
-        <div class="navbar-nav ml-auto">
-            <div class="navbar-nav">
-                <a href="/login" class="nav-item nav-link"><i class="fa fa-sign-in"></i> Login</a>
-                <a href="/register" class="nav-item nav-link"><i class="fa fa-user"></i> Register</a>
-            </div>
+            <a href="/allRecipes" class="nav-item nav-link">All Recipes</a>
         </div>
     </div>
 </nav>

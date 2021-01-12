@@ -136,23 +136,24 @@ a.btn-card:hover {
 }
 
 /* Login Form */
-.login-form, .register-form {
-    width: 340px;
+.recipe-form {
+    width: auto;
     margin: 50px auto;
+    padding: 0 20px;
   	font-size: 15px;
 }
-.login-form form, .register-form form {
+.recipe-form form {
     margin-bottom: 15px;
     background: #ffffff;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
     padding: 30px;
 }
-.login-form h2, .register-form h2 {
+.recipe-form h2 {
     margin: 0 0 15px;
     color: #DD1C1A;
 }
 
-.login-form .btn, .register-form .btn{
+.recipe-form .btn{
     background-color: #7697b1;
 	color: #fff;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
@@ -164,15 +165,6 @@ a.btn-card:hover {
     color: #fff;
 }
 
-.login-form .btn:hover, .register-form .btn:hover{
+.recipe-form .btn:hover{
     background: #DD1C1A;
-}
-
-.login-form .register-link a, .register-form .login-link a{
-    color: black !important;
-    text-decoration: underline;
-}
-
-.login-form .register-link a:hover, .register-form .login-link a:hover{
-    color: #DD1C1A !important;
 }

@@ -8,16 +8,16 @@
 namespace App\Http\Services\Business;
 
 use \PDO;
-use App\Models\UserModel;
-use App\Http\Services\Data\UserDataService;
+use App\Models\RecipeModel;
+use App\Http\Services\Data\RecipeDataService;
 
-class UserBusinessService {
+class RecipeBusinessService {
 /**
-     * User registration
-     * @param UserModel $user
+     * Create Recipe
+     * @param RecipeModel $recipe
      * @return boolean
      */
-    public function register(UserModel $user) {
+    public function create(RecipeModel $recipe) {
         $servername = config("database.connections.mysql.host");
         $dbname = config("database.connections.mysql.database");
         $username = config("database.connections.mysql.username");
@@ -27,8 +27,8 @@ class UserBusinessService {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //create a security service dao with this connection and try to find the password in user
-        $service = new UserDataService($conn);
-        $flag = $service->createNewUser($user);
+        $service = new RecipeDataService($conn);
+        $flag = $service->createRecipe($recipe);
 
         //return the finder results
         return $flag;

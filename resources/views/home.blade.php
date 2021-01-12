@@ -3,8 +3,7 @@
 
 @section('content')
     <div class="container">
-      <h3>Emily's Recipe Book</h3>
-      <p>Recipe book for everyone by everyone.</p>
+      <h3>Emily's Personal Cook Book</h3>
     </div>
 
     <div class="container">
