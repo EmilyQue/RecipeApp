@@ -1,55 +1,39 @@
 @extends('layouts.appmaster')
 @section('title', 'Home')
 
+<?php
+use App\Http\Services\Business\RecipeBusinessService;
+
+//user business service is called
+$bs = new RecipeBusinessService();
+$recipes = $bs->findAll();
+?>
+
 @section('content')
     <div class="container">
       <h3>Emily's Personal Cook Book</h3>
     </div>
 
+
     <div class="container">
         <div class="row">
+            <?php
+    for ($x = 0; $x < count($recipes); $x++) { ?>
             <div class="col-md-4">
                 <div class="card-content">
                     <div class="card-img">
-                        <img src="https://www.seriouseats.com/2018/03/20180413-brownie-mix-vicky-wasik-20-1500x1125.jpg" alt="">
+                        <img src="/images/{{$recipes[$x]['image']}}" alt="">
                     </div>
                     <div class="card-desc">
-                        <h3>Brownies</h3>
-                        <p><small>By: Emily Quevedo</small></p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                            voluptas totam</p>
+                        <h3>{{$recipes[$x]['title']}}</h3>
+                        <p><small>Estimated Time: {{$recipes[$x]['time']}}</small></p>
+                        <p>{{$recipes[$x]['description']}}</p>
                             <a href="#" class="btn-card">See Recipe</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card-content">
-                    <div class="card-img">
-                        <img src="https://tastesbetterfromscratch.com/wp-content/uploads/2020/04/Cajun-Chicken-Pasta-2-500x500.jpg" alt="">
-                    </div>
-                    <div class="card-desc">
-                        <h3>Pasta</h3>
-                        <p><small>By: Emily Quevedo</small></p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                            voluptas totam</p>
-                            <a href="#" class="btn-card">See Recipe</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-content">
-                    <div class="card-img">
-                        <img src="https://cdn.loveandlemons.com/wp-content/uploads/2020/03/bean-recipes-1.jpg" alt="">
-                    </div>
-                    <div class="card-desc">
-                        <h3>Bean Soup</h3>
-                        <p><small>By: Emily Quevedo</small></p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                            voluptas totam</p>
-                            <a href="#" class="btn-card">See Recipe</a>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
+
 @endsection

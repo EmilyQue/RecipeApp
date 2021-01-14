@@ -10,16 +10,20 @@ namespace App\Models;
 class RecipeModel {
     private $id;
     private $title;
+    private $description;
     private $ingredients;
     private $directions;
     private $time;
+    private $image;
 
-    public function __construct($id, $title, $ingredients, $directions, $time) {
+    public function __construct($id, $title, $description, $ingredients, $directions, $time, $image) {
         $this->id = $id;
         $this->title = $title;
+        $this->description = $description;
         $this->ingredients = $ingredients;
         $this->directions = $directions;
         $this->time = $time;
+        $this->image = $image;
     }
 
     /**
@@ -36,6 +40,14 @@ class RecipeModel {
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 
     /**
@@ -63,6 +75,14 @@ class RecipeModel {
     }
 
     /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
      * @param mixed $id
      */
     public function setId($id)
@@ -76,6 +96,14 @@ class RecipeModel {
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+     /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
 
     /**
@@ -100,5 +128,13 @@ class RecipeModel {
     public function setTime($time)
     {
         $this->time = $time;
+    }
+
+     /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
     }
 }

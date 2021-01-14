@@ -26,3 +26,6 @@ Route::get('/addRecipe', function() {
 
 /*Fetches the post parameters of registration*/
 Route::post('/addRecipe', 'App\Http\Controllers\RecipeController@index');
+
+/*Route is mapped to the '/displayRecipe URI and will return the Show All Recipe view' */
+Route::get('/allRecipes', 'App\Http\Controllers\RecipeController@read');

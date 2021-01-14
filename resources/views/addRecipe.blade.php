@@ -11,6 +11,10 @@
                 <input type="text" class="form-control" name="title" placeholder="" required="required">
             </div>
             <div class="form-group">
+                <label>Description:</label>
+                <textarea class="form-control" name="description" rows="3"></textarea>
+            </div>
+            <div class="form-group">
                 <label>Ingredients:</label>
                 <textarea class="form-control" name="ingredients" rows="3"></textarea>
             </div>
@@ -21,6 +25,10 @@
             <div class="form-group">
                 <label>Estimated Time:</label>
                 <input type="text" class="form-control" name="time" placeholder="Ex: 30 mins" required="required">
+            </div>
+            <div class="form-group">
+                <label>Add Image:</label><br>
+                <input type="file" id="myFile" name="image">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">Submit</button>

@@ -26,9 +26,26 @@ class RecipeBusinessService {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        //create a security service dao with this connection and try to find the password in user
+        //create a recipe service dao with this connection and try to create recipe
         $service = new RecipeDataService($conn);
         $flag = $service->createRecipe($recipe);
+
+        //return the finder results
+        return $flag;
+    }
+
+    public function findAll() {
+        $servername = config("database.connections.mysql.host");
+        $dbname = config("database.connections.mysql.database");
+        $username = config("database.connections.mysql.username");
+        $password = config("database.connections.mysql.password");
+
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        //create a recipe service dao with this connection and try to find all recipes in database
+        $service = new RecipeDataService($conn);
+        $flag = $service->readAllRecipes();
 
         //return the finder results
         return $flag;
