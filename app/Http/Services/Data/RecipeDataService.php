@@ -26,22 +26,17 @@ class RecipeDataService {
         $image = $recipe->getImage();
 
         //prepared statements is created
-        $stmt = $this->conn->prepare("INSERT INTO `recipes` (`title`, `description`, `ingredients`, `directions`, `time`, `image`) VALUES (:title, :description, :ingredients, :directions, :time, :image)");
-        //binds parameters
-        $stmt->bindParam(':title', $title);
-        $stmt->bindParam(':description', $description);
-        $stmt->bindParam(':ingredients', $ingredients);
-        $stmt->bindParam(':directions', $directions);
-        $stmt->bindParam(':time', $time);
-        $stmt->bindParam(':image', $image);
+        $stmt = $this->conn->prepare("INSERT INTO `recipes` (`title`, `description`, `ingredients`, `directions`, `time`, `image`) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param('ssssss', $title, $description, $ingredients, $directions, $time, $image);
 
         /*see if user existed and return true if found
         else return false if not found*/
-        if ($stmt->execute() >= 1) {
+        if ($stmt->execute()) {
             return true;
         }
 
         else {
+            echo "ERROR: " . mysqli_error($this->conn);
             return false;
         }
     }
@@ -49,15 +44,16 @@ class RecipeDataService {
     //Method to get data from database
     public function readAllRecipes() {
         //prepared statement is created to display recipes
-        $stmt = $this->conn->prepare('SELECT * from recipes');
+        $stmt = "SELECT * from `recipes`";
         //executes prepared query
-        $stmt->execute();
+        // $stmt->execute();
+        $result = mysqli_query($this->conn, $stmt);
 
-        if ($stmt->rowCount() > 0) {
+        if ($result->num_rows > 0) {
             //recipe array is created
             $recipeArray = array();
             //fetches result from prepared statement and returns as an array
-            while ($recipe = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            while ($recipe = mysqli_fetch_assoc($result)) {
                 //inserts variables into end of array
                 array_push($recipeArray, $recipe);
             }

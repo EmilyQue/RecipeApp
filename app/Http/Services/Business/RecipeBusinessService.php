@@ -7,6 +7,7 @@
 /*Handles user business logic and connections to database*/
 namespace App\Http\Services\Business;
 
+use \mysqli;
 use \PDO;
 use App\Models\RecipeModel;
 use App\Http\Services\Data\RecipeDataService;
@@ -23,8 +24,7 @@ class RecipeBusinessService {
         $username = config("database.connections.mysql.username");
         $password = config("database.connections.mysql.password");
 
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn = new mysqli($servername, $username, $password, $dbname);
 
         //create a recipe service dao with this connection and try to create recipe
         $service = new RecipeDataService($conn);
@@ -40,8 +40,7 @@ class RecipeBusinessService {
         $username = config("database.connections.mysql.username");
         $password = config("database.connections.mysql.password");
 
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn = new mysqli($servername, $username, $password, $dbname);
 
         //create a recipe service dao with this connection and try to find all recipes in database
         $service = new RecipeDataService($conn);
