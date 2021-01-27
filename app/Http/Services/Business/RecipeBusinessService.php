@@ -19,12 +19,11 @@ class RecipeBusinessService {
      * @return boolean
      */
     public function create(RecipeModel $recipe) {
-        $servername = config("database.connections.mysql.host");
-        $dbname = config("database.connections.mysql.database");
-        $username = config("database.connections.mysql.username");
-        $password = config("database.connections.mysql.password");
+        // Azure
+        // $conn = new mysqli("localhost", "azure", "6#vWHD_$", "recipebook", "56270");
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Heroku
+        $conn = new mysqli( "hwr4wkxs079mtb19.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "kxoo44tqs98lmh9u", "b6bx71p6xk9slozg", "njeg1pp8k5we8dk2" );
 
         //create a recipe service dao with this connection and try to create recipe
         $service = new RecipeDataService($conn);
@@ -35,12 +34,11 @@ class RecipeBusinessService {
     }
 
     public function findAll() {
-        $servername = config("database.connections.mysql.host");
-        $dbname = config("database.connections.mysql.database");
-        $username = config("database.connections.mysql.username");
-        $password = config("database.connections.mysql.password");
+        // Azure
+        // $conn = new mysqli("localhost", "azure", "6#vWHD_$", "recipebook", "56270");
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        //Heroku
+        $conn = new mysqli( "hwr4wkxs079mtb19.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "kxoo44tqs98lmh9u", "b6bx71p6xk9slozg", "njeg1pp8k5we8dk2" );
 
         //create a recipe service dao with this connection and try to find all recipes in database
         $service = new RecipeDataService($conn);
