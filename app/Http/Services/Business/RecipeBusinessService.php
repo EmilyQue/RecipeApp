@@ -39,7 +39,7 @@ class RecipeBusinessService {
     }
 
     public function findAll() {
-        $conn = new mysqli("localhost", "root", "", "recipebook", "3306");
+        // $conn = new mysqli("localhost", "root", "", "recipebook", "3306");
 
         // Azure
         // $conn = new mysqli("localhost", "azure", "6#vWHD_$", "recipebook", "56270");
