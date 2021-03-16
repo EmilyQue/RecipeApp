@@ -15,7 +15,8 @@ class MyLogger implements ILogger
         if (self::$logger == null)
         {
             self::$logger = new Logger('RecipeApp');
-            $stream = new StreamHandler('storage/logs/recipeapp.log', Logger::DEBUG);
+            // $stream = new StreamHandler('storage/logs/recipeapp.log', Logger::DEBUG);
+            $stream = new StreamHandler('php://stdout', Logger::DEBUG);
             $stream->setFormatter(new LineFormatter("%datetime% : %level_name% : %message% %context%\n", "g:iA n/j/Y"));
             self::$logger->pushHandler($stream);
         }
