@@ -22,7 +22,7 @@ $recipes = $bs->findAll();
             <div class="col-md-4">
                 <div class="card-content">
                     <div class="card-img">
-                        <img src="images/{{$recipes[$x]['image']}}" alt="">
+                        <img src="resources/images/{{$recipes[$x]['image']}}" alt="">
                     </div>
                     <div class="card-desc">
                         <h3>{{$recipes[$x]['title']}}</h3>
