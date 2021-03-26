@@ -12,6 +12,7 @@ $recipes = $bs->findAll();
 @section('content')
     <div class="container">
       <h3>Emily's Personal Cook Book</h3>
+      <h1>Testing Build Pipeline!</h1>
     </div>
 
 
